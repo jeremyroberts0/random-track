@@ -22,9 +22,9 @@ export default DS.Adapter.extend({
   findAll() {
 
   },
-  query(store, type, query, recordArray) {
+  queryRecord(store, type, query, recordArray) {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      resolve([queryStub[query.query]]);
+      resolve(queryStub[query.query]);
     });
   }
 });
