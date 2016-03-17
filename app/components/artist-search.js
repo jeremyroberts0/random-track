@@ -4,7 +4,8 @@ export default Ember.Component.extend({
   actions: {
     changeArtist(artist) {
       // TODO: handle artist change
-      console.error(artist);
+      var newUrl = '/artist/' + encodeURIComponent(artist);
+      console.error(newUrl);
     },
     submitArtistForm() {
       var artist = $(this.element).find('input[name="arist"]').val();
