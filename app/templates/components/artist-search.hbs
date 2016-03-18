@@ -4,11 +4,11 @@
         <p>Enter an artist to see random lyrics from that artist</p>
         <form {{action "submitArtistForm" on="submit"}}>
             <input type="text" required="true" name="arist" />
-            <button type="submit">Find</button>
+            <button type="submit" class="btn waves-effect waves-light">Find a Random Track</button>
         </form>
     </div>
     <div>
-        <p>Or select one of the developer's favorite artists!</p>
+        <p>Or select one of the developer's favorite artists:</p>
         <ul>
             <li>{{#link-to "artist" "Foo Fighters"}}Foo Fighters{{/link-to}}</li>
             <li>{{#link-to "artist" "Led Zeppelin"}}Led Zeppelin{{/link-to}}</li>
