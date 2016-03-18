@@ -1,10 +1,3 @@
-var queryStub = {
-  "Ween":{
-    "id":"ween",
-    "name":"Ween"
-  }
-};
-
 import Spotify from '../libs/spotify';
 
 export default DS.Adapter.extend({
@@ -26,7 +19,10 @@ export default DS.Adapter.extend({
   },
   queryRecord(store, type, query, recordArray) {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      Spotify.getRandomTrackFromArtist(query);
+      Spotify.getRandomTrackFromArtist(query).then(function(track) {
+        // Transform the track object into something we like
+        console.error(track);
+      }, reject);
     });
   }
 });

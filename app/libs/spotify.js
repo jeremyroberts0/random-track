@@ -36,10 +36,8 @@ var Spotify = {
         failure: reject
       });
     }).then(function(artists) {
-      return new Promise(function(resolve, reject){
-        var artist = artists[0];
-        return Spotify.getRandomTrack(artist.id);
-      });
+      var artist = artists[0];
+      return Spotify.getRandomTrack(artist.id);
     });
   },
   getRandomTrack(artistId) {
