@@ -24,14 +24,8 @@ export default DS.Adapter.extend({
         var artist = track.artists[0];
         var trackToReturn = {
           id: track.id,
-          artist: {
-            name: artist.name,
-            id: artist.id
-          },
-          album: {
-            name: track.album.name,
-            image: track.album.images[0]
-          },
+          artistName: artist.name,
+          albumName: track.album.name,
           name: track.name,
           number: track.track_number,
           explicit: track.explicit,

@@ -1,0 +1,11 @@
+@import 'materialize';
+@import 'ember-cli-materialize';
+.artist {
+  .song.info {
+    font-size: 18px;
+    .name {
+      text-decoration: underline;
+    }
+  }
+}
+
