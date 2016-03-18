@@ -19,7 +19,7 @@ export default DS.Adapter.extend({
   },
   queryRecord(store, type, query, recordArray) {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      Spotify.getRandomTrackFromArtist(query).then(function(track) {
+      Spotify.getRandomTrackFromArtistQuery(query).then(function(track) {
         // Transform the track object into something we like
         var artist = track.artists[0];
         var trackToReturn = {

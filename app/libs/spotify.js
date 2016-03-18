@@ -14,12 +14,12 @@ function getRandomItem(arr) {
 }
 
 var Spotify = {
-  getRandomTrackFromArtist(query) {
+  getRandomTrackFromArtistQuery(query) {
     var params = {
       q:query.query,
       type:'artist',
       market:'US',
-      limit:'50'
+      limit:'1'
     };
 
     var queryString = makeQueryString(params);
