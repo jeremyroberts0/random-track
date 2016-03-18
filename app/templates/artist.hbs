@@ -1,16 +1,16 @@
 <div class="artist">
     <h2 class="song name">{{model.name}}</h2>
     <p class="song info">From <span class="album name">{{model.albumName}}</span> By <span class="artist name">{{model.artistName}}</span></p>
-    <p>
-        If you aren't already logged in with Spotify, you'll be prompted to login to play this song.<br>
-        If you're listening to Spotify elsewhere, playing here will interrupt that session.
-    </p>
     <iframe src="https://embed.spotify.com/?uri={{model.uri}}"
             width="300"
             height="380"
             frameborder="0"
             allowtransparency="true"
     ></iframe>
+    <p>
+        If you aren't already logged in with Spotify, you'll be prompted to login to play this song.<br>
+        If you're listening to Spotify elsewhere, playing here will interrupt that session.
+    </p>
 </div>
 
 {{outlet}}
