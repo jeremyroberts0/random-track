@@ -5,6 +5,8 @@ var queryStub = {
   }
 };
 
+import Spotify from '../libs/spotify';
+
 export default DS.Adapter.extend({
   namespace:'/artist',
   findRecord() {
@@ -24,7 +26,7 @@ export default DS.Adapter.extend({
   },
   queryRecord(store, type, query, recordArray) {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      resolve(queryStub[query.query]);
+      Spotify.getRandomTrackFromArtist(query);
     });
   }
 });
