@@ -21,7 +21,24 @@ export default DS.Adapter.extend({
     return new Ember.RSVP.Promise(function(resolve, reject){
       Spotify.getRandomTrackFromArtist(query).then(function(track) {
         // Transform the track object into something we like
-        console.error(track);
+        var artist = track.artists[0];
+        var trackToReturn = {
+          id: track.id,
+          artist: {
+            name: artist.name,
+            id: artist.id
+          },
+          album: {
+            name: track.album.name,
+            image: track.album.images[0]
+          },
+          name: track.name,
+          number: track.track_number,
+          explicit: track.explicit,
+          duration: track.duration_ms,
+          uri: track.uri
+        };
+        resolve(trackToReturn);
       }, reject);
     });
   }
